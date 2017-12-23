@@ -2,7 +2,7 @@ from bottle import run, get, post, request
 import os
 
 light = {
-	'status' : 'Off' 
+	'status' : 'off' 
 } # Start off
 
 
@@ -14,7 +14,7 @@ def get_status():
 def toggle_status():
 	set_request = request.json.get('state')
 	light['status'] = set_request
-	return {'message': 'Light Toggled'}
+	return {'message': 'Light state set to {}'.format(set_request.lower())}
 
 
 if os.environ.get('APP_LOCATION') == 'heroku':
