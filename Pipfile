@@ -17,3 +17,5 @@ bottle = "*"
 
 [dev-packages]
 
+boddle = "*"
+pytest = "*"
