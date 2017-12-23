@@ -2,18 +2,18 @@ from bottle import run, get, post, request
 import os
 
 light = {
-	'status' : 'off' 
+	'state' : 'off' 
 } # Start off
 
 
-@get('/')
+@get('/state')
 def get_status():
 	return light
 
-@post('/set')
+@post('/state')
 def toggle_status():
 	set_request = request.json.get('state')
-	light['status'] = set_request
+	light['state'] = set_request
 	return {'message': 'Light state set to {}'.format(set_request.lower())}
 
 
