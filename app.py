@@ -1,4 +1,5 @@
 from bottle import run, get, post, request
+import os
 
 light = {
 	'status' : 'Off' 
@@ -16,4 +17,7 @@ def toggle_status():
 	return {'message': 'Light Toggled'}
 
 
+if os.environ.get('APP_LOCATION') == 'heroku':
+    run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
+else:
 run(host='localhost', port=8080, debug=True, reloader=True)
