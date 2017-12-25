@@ -8,4 +8,7 @@ This provides a RESTful API for testing ESP8266 projects.
 
 - Write docs
 - Implement a simple webpage at `/` that allows toggling
+- Write tests
+- Move to Github
+- Set up Travis CI
 
